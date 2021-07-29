@@ -1,0 +1,112 @@
+const Btn = (props) => {
+  const { onPlusClick } = props;
+  return (
+    <button className="button" onClick={onPlusClick}>
+      Add Filter
+    </button>
+  );
+};
+
+const Dropdown = (props) => {
+  const [property, setProperty] = React.useState(null);
+  const [condition, setCondition] = React.useState(null);
+  const [value, setValue] = React.useState(null);
+
+  const properties = ["Age", "Address", "Name", "Email", "Phone", "Id"];
+  const conditions = [
+    "Equals to",
+    "Greater than equal to",
+    "Less than equal to"
+  ];
+
+  return (
+    <div className="dropdown-container">
+      <div
+        className="dropdown dropdown_1"
+        onClick={(e) => {
+          setProperty(e.target.value);
+          console.log(e.target.innerText);
+        }}
+      >
+        {properties.map((prop, idx) => {
+          return <button className="option">{prop}</button>;
+        })}
+      </div>
+      {property !== null ? (
+        <div className="dropdown dropdown_2">
+          {conditions.map((cond, idx) => {
+            return (
+              <>
+                <label className="label" key={idx}>
+                  <input
+                    type="radio"
+                    checked={condition === cond}
+                    onChange={(e) => setCondition(cond)}
+                  />
+                  {cond}
+                </label>
+                {condition && condition === cond ? (
+                  <input
+                    className="text"
+                    type="text"
+                    placeholder="enter value"
+                    onChange={(e) => setValue(e.target.value)}
+                  />
+                ) : null}
+              </>
+            );
+          })}
+          <div className="pButtonProp">
+            <button
+              className="pButton1"
+              onClick={() => {
+                setProperty(null);
+                props.closeDropdown();
+              }}
+            >
+              Cancel
+            </button>
+            <button className="pButton2" onClick={() => {}}>
+              Save Filter
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
+const App = () => {
+  const [dropdown, setDropdown] = React.useState(false);
+
+  function onPlusClick() {
+    setDropdown(!dropdown);
+  }
+
+  return (
+    <div className="parent">
+      <div className="div1">
+        <Btn />
+      </div>
+      <div>
+        <Btn />
+      </div>
+
+      <div>
+        <Btn />
+      </div>
+      <div>
+        <Btn />
+      </div>
+
+      <div>
+        <Btn onPlusClick={onPlusClick} />
+        {dropdown ? (
+          <Dropdown closeDropdown={() => setDropdown(false)} />
+        ) : null}
+      </div>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById("container"));

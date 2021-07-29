@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+.button {
+  
+  padding: 8px 18px;
+  font-family: Sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #342194;
+  color: #ffffff;
+  border-radius: 6px;
+  border: none;
+  margin: 3px;
+ 
+}
+
+.pButton1 {
+  
+  padding: 12px 15px;
+  font-family: Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid;
+  border-color: #342194;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #342194;
+  width: 50%;
+  margin: 3px;
+ 
+ 
+}
+
+.pButton2 {
+  
+  padding: 8px 15px;
+  font-family: Sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #342194;
+  color: #ffffff;
+  border: 2px solid;
+  border-color: #342194;
+  border-radius: 4px;
+  width: 50%;
+  margin: 3px;
+  
+  
+ 
+}
+
+
+.pButtonProp {
+  
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  
+}
+
+
+.parent {
+  display: flex;
+  background-color: #000000;
+}
+
+
+
+
+.dropdown-container {
+  background: #ccc;
+  position: relative;
+  z-index: 1;
+}
+
+.dropdown {
+  position: absolute;
+  /*height: 80px;*/
+  overflow-y: scroll;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 4px;
+  border-radius: 5px;
+  
+}
+
+.dropdown_1 {
+  top: 12px;
+  left: 0px;
+  width: 120px;
+  box-shadow: 0px 0px 1px rgba(9, 30, 66, 0.30),
+    0px 4px 8px rgba(9, 30, 66, 0.15);
+}
+
+.dropdown_2 {
+  /*height: 150px;*/
+  top: 12px;
+  left: 132px;
+  width: 250px;
+  box-shadow: 0px 0px 1px rgba(9, 30, 66, 0.30),
+    0px 4px 8px rgba(9, 30, 66, 0.25);
+}
+
+.option {
+  position
+  margin: 2px;
+  padding: 12px;
+  padding-left: 12px;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  background: none;
+  text-align: left;
+}
+
+.option:hover {
+  background: #ebecf0;
+}
+
+.option:focus {
+  background: #eae6ff;
+}
+
+input[type="radio"] {
+  background-color: black;
+  margin-right: 8px;
+  transform: scale(1.15);
+  
+}
+
+.label {
+  font-family: Sans-serif;
+  font-size: 16px;
+  padding: 12px;
+  padding-left: 2px;
+  border-radius: 3px;
+  margin: 2px;
+}
+
+.label:focus {
+  background-color: #eae6ff;
+}
+
+.label:hover {
+  background: #ebecf0;
+}
+
+.text {
+  width: 90%;
+  margin: 2px auto;
+  padding: 20px;
+  border: 1px solid #342194;
+  text-transform: capitalize;
+  font-size: 16px;
+  border-radius: 5px;
+  height: 25px;
+  outline: none;
+}
+
+.text:focus {
+  border: 1px solid #342194;
+}
